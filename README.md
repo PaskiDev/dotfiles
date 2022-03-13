@@ -151,7 +151,6 @@ So our partition will be like the next table:
 Then we click on **[ Write ]** and enter "yes".
 We **[ Quit ]**.
 
----
 #### Format the partitions
 
 In the first case, we'll have the boot:
@@ -168,7 +167,7 @@ Next the swap:
 root@archiso ~ # mkswap /dev/sda3
 root@archiso ~ # swapon /dev/sda3
 ```
----
+
 #### Mounting the partitions
 
 For making the install of the OS we have to mount the partitions.
@@ -190,7 +189,6 @@ And pass them to the boot and the home directories:
 root@archiso ~ # mount /dev/sda1 /mnt/boot
 root@archiso ~ # mkdir /dev/sda4 /mnt/home
 ```
----
 
 ### Installing the OS
 
