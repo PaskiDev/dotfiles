@@ -229,47 +229,47 @@ root@archiso ~ # arch-chroot /mnt
 #### Hostname
 If we want to change the hostname we can put this command with the new name:
 ```console
-[root @archiso /]# echo hostname > /etc/hostname
+[root@archiso /]# echo hostname > /etc/hostname
 ```
 
 In my case I'll be using a name from a norse god:
 ```console
-[root @archiso /]# echo odin > /etc/hostname
+[root@archiso /]# echo odin > /etc/hostname
 ```
 
 #### Localtime
 We can choose what time to put. Normally I'll be choosing Europe/Madrid to get the same time from my country, but because I'm recently learning japanese I'll be using that time:
 ```console
-[root @archiso /]# ln -sf /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
+[root@archiso /]# ln -sf /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
 ```
 
 If you cannot find your time you can check this command:
 ```console
-[root @archiso /]# ls /usr/share/zoneinfo
+[root@archiso /]# ls /usr/share/zoneinfo
 ```
 
 #### Language
 With the next command we will change the language of our system. In this case I'll be using English instead of Spanish.
 ```console
-[root @archiso /]# nano /etc/locale.gen
+[root@archiso /]# nano /etc/locale.gen
 ```
 
 This will open a list with codes like this **en_US**. I will uncomment a line named **en_US.UTF-8 UTF-8**.
 After that I'll be putting manually on the system config.
 ```console
-[root @archiso /]# echo LANG=en_US.UTF-8 > /etc/locale.conf
+[root@archiso /]# echo LANG=en_US.UTF-8 > /etc/locale.conf
 ```
 
 #### Start the hardware clock
 Let's adjust the internal clock:
 ```console
-[root @archiso /]# hwclock -w
+[root@archiso /]# hwclock -w
 ```
 
 #### Configuring the keyboard layout
 For the inner system we must configure the layout.
 ```console
-[root @archiso /]# echo KEYMAP=es > /etc/vconsole.conf
+[root@archiso /]# echo KEYMAP=es > /etc/vconsole.conf
 ```
 
 You must know that when we install the graphic package we must reconfigure this part.
@@ -277,40 +277,40 @@ You must know that when we install the graphic package we must reconfigure this 
 #### Install grub
 If you're not very familiar with grub, is just a bootloader. So let's install it.
 ```console
-[root @archiso /]# grub-install /dev/sda
+[root@archiso /]# grub-install /dev/sda
 ```
 
 #### Update grub
 If we want to update grub just put the next command, I recommend it to do it, for not having errors later:
 ```console
-[root @archiso /]# grub-mkconfig -o /boot/grub/grub.cfg
+[root@archiso /]# grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
 #### Put an administrator password
 We're close to finish the basic installation. Let's put a password for the user root. I usually recommend to block direct access to root after the first login but it's up to you.
 ```console
-[root @archiso /]# passwd
+[root@archiso /]# passwd
 ```
 
 #### Create a user
 Creating a new user for login, instead of root.
 ```console
-[root @archiso /]# useradd -m -g users -G audio,lp,optical,storage,video,wheel,games,power,scanner -s /bin/bash username
+[root@archiso /]# useradd -m -g users -G audio,lp,optical,storage,video,wheel,games,power,scanner -s /bin/bash username
 ```
 
 I'll be using a different name like "thor", so you could see the difference.
 ```console
-[root @archiso /]# useradd -m -g users -G audio,lp,optical,storage,video,wheel,games,power,scanner -s /bin/bash thor
+[root@archiso /]# useradd -m -g users -G audio,lp,optical,storage,video,wheel,games,power,scanner -s /bin/bash thor
 ```
 
 So then we change the password of our new user:
 ```console
-[root @archiso /]# passwd thor
+[root@archiso /]# passwd thor
 ```
 
 Then we quit from the mounted partition.
 ```console
-[root @archiso /]# exit
+[root@archiso /]# exit
 ```
 
 ### Unmounting the partitions
@@ -339,7 +339,7 @@ Let's edit the sudoers file to put our new user.
 root@archiso ~ # nano /etc/sudoers
 ```
 
-And we check for a line that is commented:
+And we check for a line that is commented, then remove the "#":
 ```console
 %wheel ALL=(ALL:ALL) ALL
 ```
