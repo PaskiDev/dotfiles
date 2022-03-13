@@ -71,6 +71,7 @@ flowchart LR;
   A[PaskiArch]-->B[ArchISO];
   A-->C[ArchSystem];
   B-->D[ArchLinux.iso];
+  D-->E[System Files];
 ```
 
 ## Getting hands dirty
