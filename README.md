@@ -359,5 +359,5 @@ root@archiso ~ # exit
 ### First system update
 Time to make the first system update! Just login with your user.
 ```console
-root@archiso ~ # sudo pacman -Syyu
+root@archiso ~ # sudo pacman -Syu
 ```
