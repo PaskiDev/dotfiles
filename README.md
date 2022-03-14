@@ -28,6 +28,7 @@
     - [First login](#first-login)
         - [Enabling the network service](#enabling-the-network-service)
         - [First system update](#first-system-update)
+        - [Installing Xorg](#installing-xorg)
 
 # Installing ArchLinux
 
