@@ -390,3 +390,8 @@ Then it's time to install our browser.
 ```console
 thor@odin ~ $ yay -S brave
 ```
+Time to enable lightdm and reboot!
+```console
+thor@odin ~ $ sudo systemctl enable lightdm
+thor@odin ~ $ reboot
+```
