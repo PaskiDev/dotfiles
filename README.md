@@ -31,6 +31,7 @@
         - [Installing Xorg](#installing-xorg)
 - [Customizing ArchLinux](#customizing-archlinux)
     - [Creating a graphic environment](#creating-a-graphic-environment)
+    - [New terminal](#new-terminal)
 
 # Installing ArchLinux
 
@@ -394,4 +395,14 @@ Time to enable lightdm and reboot!
 ```console
 thor@odin ~ $ sudo systemctl enable lightdm
 thor@odin ~ $ reboot
+```
+
+## New terminal
+Before starting again, if you use a different keyboard layout than the english, you must make the next command with your layout name:
+```console
+thor@odin ~ $ setxkbmap es
+```
+Xterm it's nice, but alacritty is written in Rust and if you don't know, I love Rust ❤.
+```console
+thor@odin ~ $ sudo pacman -S alacritty
 ```
