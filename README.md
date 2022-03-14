@@ -369,3 +369,22 @@ It's important that if we want to create graphic environments we use Xorg. This 
 ```console
 thor@odin ~ $ sudo pacman -Sy xorg
 ```
+
+# Customizing ArchLinux
+## Creating a graphic environment
+Now we have a system in terminal, unless you really like this kind of desktop it's not the best to work. So I'll install lightdm, with a greeter (you need a greeter to run lightdm), qtile for work with a tiling system instead of floating windows, xterm as a terminal (temporary) and neovim as a code editor (I really like vim and neovim it's magic).
+```console
+thor@odin ~ $ sudo pacman -S lightdm lightdm-gtk-greeter qtile xterm neovim
+```
+
+After these packages I want to install a browser to navigate through Internet. People usually download firefox, in my case I'll install brave. For install brave we will need yay a package manager.
+```console
+thor@odin ~ $ sudo pacman -S --needed git base-devel
+thor@odin ~ $ git clone https://aur.archlinux.org/yay.git
+thor@odin ~ $ cd yay
+thor@odin ~ $ makepkg -si
+```
+Then it's time to install our browser.
+```console
+thor@odin ~ $ yay -S brave
+```
