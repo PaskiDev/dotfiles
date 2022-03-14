@@ -337,7 +337,7 @@ root@archiso ~ # reboot
 We will be **login** using **root** as first login, to change some things before the graphic update.
 Let's edit the sudoers file to put our new user.
 ```console
-root@archiso ~ # nano /etc/sudoers
+root@odin ~ # nano /etc/sudoers
 ```
 
 And we check for a line that is commented, then remove the "#":
@@ -348,17 +348,23 @@ And we check for a line that is commented, then remove the "#":
 ### Enabling the network service
 Time to get access to Internet.
 ```console
-root@archiso ~ # systemctl start NetworkManager.service
-root@archiso ~ # systemctl enable NetworkManager.service
+root@odin ~ # systemctl start NetworkManager.service
+root@odin ~ # systemctl enable NetworkManager.service
 ```
 
 Then we exit with:
 ```console
-root@archiso ~ # exit
+root@odin ~ # exit
 ```
 
 ### First system update
 Time to make the first system update! Just login with your user.
 ```console
-root@archiso ~ # sudo pacman -Syu
+thor@odin ~ $ sudo pacman -Syu
+```
+
+### Installing Xorg
+It's important that if we want to create graphic environments we use Xorg. This helps us to create a bridge between the hardware and the software we want to run.
+```console
+thor@odin ~ $ sudo pacman -Sy xorg
 ```
