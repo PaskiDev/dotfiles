@@ -29,6 +29,8 @@
         - [Enabling the network service](#enabling-the-network-service)
         - [First system update](#first-system-update)
         - [Installing Xorg](#installing-xorg)
+- [Customizing ArchLinux](#customizing-archlinux)
+    - [Creating a graphic environment](#creating-a-graphic-environment)
 
 # Installing ArchLinux
 
