@@ -32,6 +32,7 @@
 - [Customizing ArchLinux](#customizing-archlinux)
     - [Creating a graphic environment](#creating-a-graphic-environment)
     - [New terminal](#new-terminal)
+    - [Change the size of the screen](#change-the-size-of-the-screen)
     - [Start programs on power on](#start-programs-on-power-on)
 
 # Installing ArchLinux
@@ -408,6 +409,18 @@ Xterm it's nice, but alacritty is written in Rust and if you don't know, I love 
 thor@odin ~ $ sudo pacman -S alacritty
 ```
 
+## Change the size of the screen
+Something important to work with is the size of the screen, we're not going to work always with a sqaure screen of 1024x1024px. In this instance I'm going to show you the magic of xrandr. I recommend to use the console just this time, instead of a package called arandr.
+Put the next thing in the console:
+```console
+thor@odin ~ $ xrandr
+```
+The results are the name of the different monitors available.
+Then we will configure our monitor.
+```console
+thor@odin ~ $ xrandr --output Virtual-1 --primary --mode 1280x720 --pos 0x720
+```
+
 ## Start programs on power on
 We must understand that every package that we install on the system will not run automatically on startup. So this is what we are going to do.
 Install xinit:
@@ -419,8 +432,9 @@ Now, if you create a hidden file called xprofile and put every command you want 
 thor@odin ~ $ touch ~/.xprofile
 thor@odin ~ $ nano ~/.xprofile
 ```
-In this file put a command you want to execute at startup, for example I want to execute "setxkbmap es":
+Example file:
 ```console
+xrandr --output Virtual-1 --primary --mode 1280x720 --pos 0x720 &
 setxkbmap es &
 ```
-You've seen there is a '&', correct? That is to put more conditions on startup.
+You've seen there are '&', correct? That is to put more conditions on startup.
