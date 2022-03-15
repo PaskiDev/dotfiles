@@ -32,6 +32,7 @@
 - [Customizing ArchLinux](#customizing-archlinux)
     - [Creating a graphic environment](#creating-a-graphic-environment)
     - [New terminal](#new-terminal)
+    - [Start programs on power on](#start-programs-on-power-on)
 
 # Installing ArchLinux
 
@@ -398,7 +399,7 @@ thor@odin ~ $ reboot
 ```
 
 ## New terminal
-Before starting again, if you use a different keyboard layout than the english, you must make the next command with your layout name:
+Before starting again, if you use a different keyboard layout than the english, you must make the next command with your layout name (in my case is "es" because I'm spanish):
 ```console
 thor@odin ~ $ setxkbmap es
 ```
@@ -406,3 +407,20 @@ Xterm it's nice, but alacritty is written in Rust and if you don't know, I love 
 ```console
 thor@odin ~ $ sudo pacman -S alacritty
 ```
+
+## Start programs on power on
+We must understand that every package that we install on the system will not run automatically on startup. So this is what we are going to do.
+Install xinit:
+```console
+thor@odin ~ $ sudo pacman -S xorg-xinit
+```
+Now, if you create a hidden file called xprofile and put every command you want to run at startup it will happen.
+```console
+thor@odin ~ $ touch ~/.xprofile
+thor@odin ~ $ nano ~/.xprofile
+```
+In this file put a command you want to execute at startup, for example I want to execute "setxkbmap es":
+```console
+setxkbmap es &
+```
+You've seen there is a '&', correct? That is to put more conditions on startup.
