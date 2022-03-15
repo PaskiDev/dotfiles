@@ -420,6 +420,7 @@ Then we will configure our monitor.
 ```console
 thor@odin ~ $ xrandr --output Virtual-1 --primary --mode 1280x720 --pos 0x720
 ```
+You can set different sizes.
 
 ## Start programs on power on
 We must understand that every package that we install on the system will not run automatically on startup. So this is what we are going to do.
