@@ -33,7 +33,7 @@
     - [Creating a graphic environment](#creating-a-graphic-environment)
     - [New terminal](#new-terminal)
     - [Change the size of the screen](#change-the-size-of-the-screen)
-    - [Qtile configuration](#qtile-onfiguration)
+    - [Qtile configuration](#qtile-configuration)
     - [Install a menu](#install-a-menu)
     - [Start programs on power on](#start-programs-on-power-on)
 
