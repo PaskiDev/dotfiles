@@ -34,6 +34,8 @@
     - [New terminal](#new-terminal)
     - [Change the size of the screen](#change-the-size-of-the-screen)
     - [Start programs on power on](#start-programs-on-power-on)
+    - [Qtile configuration](#qtile-onfiguration)
+    - [Install a menu](#install-a-menu)
 
 # Installing ArchLinux
 
@@ -421,6 +423,33 @@ Then we will configure our monitor.
 thor@odin ~ $ xrandr --output Virtual-1 --primary --mode 1280x720 --pos 0x720
 ```
 You can set different sizes.
+
+## Qtile configuration
+Qtile is a tilling window manager. The summary is that you can control the sytem jsut using the keyboard, it boosts the productivity and efficiency of the developer. I'm planning to use bspwm also (at least to see how much difficult is or see how I lsot my time), but for the moment Qtile it's easy to configure and use.
+
+So let's edit the config file wiht nano or nvim (I'll use nano, nvim is note ready configured as I like):
+```console
+thor@odin ~ $ sudo nano ~/.config/qtile/config.py
+```
+We'll edit the next line:
+```python
+Key([mod], "Return", lazy.spawn("xterm")),
+```
+And change xterm for alacritty:
+```python
+Key([mod], "Return", lazy.spawn("alacritty")),
+```
+
+## Install a menu
+The question is, how am I going to open certain programs if they have a graphc interface and large commands to execute? There are different solutions, creating shell files to execute that commands, use a menu, binding certain shell commands to the keyboard... It's much simple to use a menu. I'd recommend rofi but dmenu is also nice as well.
+```console
+thor@odin ~ $ sudo pacman -S rofi
+```
+Then add these keybindings to Qtile config:
+```python
+Key([mod], "m", lazy.spawn("rofi -show run")),
+Key([mod, 'shift'], "m", lazy.spawn("rofi -show")),
+```
 
 ## Start programs on power on
 We must understand that every package that we install on the system will not run automatically on startup. So this is what we are going to do.
