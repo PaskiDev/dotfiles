@@ -38,6 +38,7 @@
     - [Install a menu](#install-a-menu)
     - [File explorer](#file-explorer)
     - [Transparent terminals](#transparent-terminals)
+    - [Getting audio](#getting-audio)
     - [Start programs on power on](#start-programs-on-power-on)
 - [Solving problems](#solving-problems)
     - [Keybindings that will be useful](#keybindings-that-will-be-useful)
@@ -487,6 +488,12 @@ thor@odin ~ $ sudo pacman -S thunar
 To achieve the transparency feature on the terminals and get some fancy things we can install picom.
 ```console
 thor@odin ~ $ sudo pacman -S picom
+```
+
+## Getting audio
+For now all we could listen is the silence of the system, we're gonna install a program to get audio and a graphic control to regulate the sound.
+```console
+thor@odin ~ $ sudo pacman -S pulseaudio pavucontrol
 ```
 
 ## Start programs on power on
