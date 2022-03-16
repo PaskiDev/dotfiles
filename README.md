@@ -33,9 +33,9 @@
     - [Creating a graphic environment](#creating-a-graphic-environment)
     - [New terminal](#new-terminal)
     - [Change the size of the screen](#change-the-size-of-the-screen)
-    - [Start programs on power on](#start-programs-on-power-on)
     - [Qtile configuration](#qtile-onfiguration)
     - [Install a menu](#install-a-menu)
+    - [Start programs on power on](#start-programs-on-power-on)
 
 # Installing ArchLinux
 
