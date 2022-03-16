@@ -433,7 +433,7 @@ thor@odin ~ $ sudo nano ~/.config/qtile/config.py
 ```
 We'll edit the next line:
 ```python
-Key([mod], "Return", lazy.spawn("xterm")),
+Key([mod], "Return", lazy.spawn(terminal)),
 ```
 And change xterm for alacritty:
 ```python
