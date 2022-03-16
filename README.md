@@ -36,7 +36,10 @@
         - [New terminal](#new-terminal)
     - [Change the size of the screen](#change-the-size-of-the-screen)
     - [Install a menu](#install-a-menu)
+    - [File explorer](#file-explorer)
     - [Start programs on power on](#start-programs-on-power-on)
+- [Solving problems](#solving-problems)
+    - [Keybindings that will be useful](#keybindings-that-will-be-useful)
 
 # Installing ArchLinux
 
@@ -467,6 +470,18 @@ Key([mod], "m", lazy.spawn("rofi -show run")),
 Key([mod, 'shift'], "m", lazy.spawn("rofi -show")),
 ```
 
+## File explorer
+Recommended if you don't want to navigate through console.
+
+My recommendation is use ranger if you want something terminal based.
+```console
+thor@odin ~ $ sudo pacman -S ranger
+```
+But if you want a graphic one you can use thunar.
+```console
+thor@odin ~ $ sudo pacman -S thunar
+```
+
 ## Start programs on power on
 We must understand that every package that we install on the system will not run automatically on startup. So this is what we are going to do.
 Install xinit:
@@ -484,3 +499,11 @@ xrandr --output Virtual-1 --primary --mode 1280x720 --pos 0x720 &
 setxkbmap es &
 ```
 You've seen there are '&', correct? That is to put more conditions on startup.
+
+# Solving problems
+This is an important section to solve some issues you may had while configuring or installing the system.
+
+## Keybindings that will be useful
+| Keys | Functions | Example |
+| ------------------------------------- | ------------------------------------- | ------------------------------------- |
+| ctrl + alt + F2 | This will open the default terminal | When you can't access your system because something failed.
