@@ -37,6 +37,7 @@
     - [Change the size of the screen](#change-the-size-of-the-screen)
     - [Install a menu](#install-a-menu)
     - [File explorer](#file-explorer)
+    - [Transparent terminals](#transparent-terminals)
     - [Start programs on power on](#start-programs-on-power-on)
 - [Solving problems](#solving-problems)
     - [Keybindings that will be useful](#keybindings-that-will-be-useful)
