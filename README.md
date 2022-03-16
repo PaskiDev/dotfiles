@@ -401,7 +401,25 @@ thor@odin ~ $ sudo systemctl enable lightdm
 thor@odin ~ $ reboot
 ```
 
-## New terminal
+## Qtile configuration
+Qtile is a tilling window manager. The summary is that you can control the system just using the keyboard, it boosts the productivity and efficiency of the developer. I'm planning to use bspwm also (at least to see how much difficult is or see how I lost my time), but for the moment Qtile it's easy to configure and use.
+
+### Default keybindings
+I'll leave you here some Qtile keybindings useful to know how to move in the system.
+
+**NOTICE:** If you're using a windows keyboard the **mod** key is the **windows** key.
+
+| Keys | Functionality |
+| ----------------- | ----------------- |
+| mod + enter | launch terminal |
+| mod + w | kill window |
+| mod + k | next window |
+| mod + j | previous window |
+| mod + ctrl + r | reload qtile |
+| mod + ctrl + q | session logout |
+| mod + tab | change layout |
+
+### New terminal
 Before starting again, if you use a different keyboard layout than the english, you must make the next command with your layout name (in my case is "es" because I'm spanish):
 ```console
 thor@odin ~ $ setxkbmap es
@@ -409,6 +427,19 @@ thor@odin ~ $ setxkbmap es
 Xterm it's nice, but alacritty is written in Rust and if you don't know, I love Rust ❤.
 ```console
 thor@odin ~ $ sudo pacman -S alacritty
+```
+
+So let's edit the Qtile config file with nano or nvim (I'll use nano, nvim is not ready configured as I like):
+```console
+thor@odin ~ $ sudo nano ~/.config/qtile/config.py
+```
+We'll edit the next line:
+```python
+Key([mod], "Return", lazy.spawn(terminal)),
+```
+And change xterm for alacritty:
+```python
+Key([mod], "Return", lazy.spawn("alacritty")),
 ```
 
 ## Change the size of the screen
@@ -423,22 +454,6 @@ Then we will configure our monitor.
 thor@odin ~ $ xrandr --output Virtual-1 --primary --mode 1280x720 --pos 0x720
 ```
 You can set different sizes.
-
-## Qtile configuration
-Qtile is a tilling window manager. The summary is that you can control the sytem jsut using the keyboard, it boosts the productivity and efficiency of the developer. I'm planning to use bspwm also (at least to see how much difficult is or see how I lsot my time), but for the moment Qtile it's easy to configure and use.
-
-So let's edit the config file wiht nano or nvim (I'll use nano, nvim is note ready configured as I like):
-```console
-thor@odin ~ $ sudo nano ~/.config/qtile/config.py
-```
-We'll edit the next line:
-```python
-Key([mod], "Return", lazy.spawn(terminal)),
-```
-And change xterm for alacritty:
-```python
-Key([mod], "Return", lazy.spawn("alacritty")),
-```
 
 ## Install a menu
 The question is, how am I going to open certain programs if they have a graphc interface and large commands to execute? There are different solutions, creating shell files to execute that commands, use a menu, binding certain shell commands to the keyboard... It's much simple to use a menu. I'd recommend rofi but dmenu is also nice as well.
