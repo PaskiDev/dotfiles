@@ -482,6 +482,12 @@ But if you want a graphic one you can use thunar.
 thor@odin ~ $ sudo pacman -S thunar
 ```
 
+## Transparent terminals
+To achieve the transparency feature on the terminals and get some fancy things we can install picom.
+```console
+thor@odin ~ $ sudo pacman -S picom
+```
+
 ## Start programs on power on
 We must understand that every package that we install on the system will not run automatically on startup. So this is what we are going to do.
 Install xinit:
@@ -497,6 +503,7 @@ Example file:
 ```console
 xrandr --output Virtual-1 --primary --mode 1280x720 --pos 0x720 &
 setxkbmap es &
+picom &
 ```
 You've seen there are '&', correct? That is to put more conditions on startup.
 
